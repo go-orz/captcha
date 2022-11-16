@@ -7,7 +7,6 @@ import (
 	"image/color"
 	"image/png"
 	"math/rand"
-	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -35,13 +34,8 @@ func ToBase64(img image.Image) (base64Encoding string, err error) {
 }
 
 func New() (*Captcha, error) {
-	// 读取字体
-	fontBytes, err := os.ReadFile("actionj.ttf")
-	if err != nil {
-		return nil, err
-	}
 	// 解析字体
-	_font, err := freetype.ParseFont(fontBytes)
+	_font, err := freetype.ParseFont(defaultFont)
 	if err != nil {
 		return nil, err
 	}
@@ -56,14 +50,14 @@ func New() (*Captcha, error) {
 		CodeType:    Default,
 		Mode:        Normal,
 		FontFace:    face,
-		Colors:      DefaultColors,
+		Colors:      defaultColors,
 	}
 	return NewWithOption(option), nil
 }
 
 func NewWithOption(option Option) *Captcha {
 	if len(option.Colors) == 0 {
-		option.Colors = DefaultColors
+		option.Colors = defaultColors
 	}
 	dc := gg.NewContext(option.Width, option.Height)
 	dc.SetFontFace(option.FontFace)
