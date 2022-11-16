@@ -1,8 +1,9 @@
 package main
 
 import (
-	"captcha"
 	"log"
+
+	"github.com/dushixiang/captcha"
 )
 
 func main() {

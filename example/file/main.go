@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"captcha"
+	"github.com/dushixiang/captcha"
 )
 
 func main() {

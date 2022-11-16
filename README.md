@@ -27,8 +27,9 @@
 package main
 
 import (
-	"captcha"
 	"log"
+
+	"github.com/dushixiang/captcha"
 )
 
 func main() {
@@ -44,5 +45,4 @@ func main() {
 	}
 	println("base64:", base64Encoding)
 }
-
 ```
