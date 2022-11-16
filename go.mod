@@ -1,4 +1,4 @@
-module captcha
+module github.com/dushixiang/captcha
 
 go 1.18
 
