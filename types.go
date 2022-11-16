@@ -1,6 +1,7 @@
 package captcha
 
 import (
+	_ "embed"
 	"image/color"
 
 	"golang.org/x/image/font"
@@ -39,7 +40,7 @@ type Option struct {
 	Colors      []color.RGBA
 }
 
-var DefaultColors = []color.RGBA{
+var defaultColors = []color.RGBA{
 	{
 		R: 0,
 		G: 135,
@@ -113,3 +114,6 @@ var DefaultColors = []color.RGBA{
 		A: 255,
 	},
 }
+
+//go:embed font/actionj.ttf
+var defaultFont []byte
