@@ -36,7 +36,7 @@ func ToBase64(img image.Image) (base64Encoding string, err error) {
 
 func New() (*Captcha, error) {
 	// 读取字体
-	fontBytes, err := os.ReadFile("./actionj.ttf")
+	fontBytes, err := os.ReadFile("actionj.ttf")
 	if err != nil {
 		return nil, err
 	}
