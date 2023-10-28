@@ -29,7 +29,7 @@ package main
 import (
 	"log"
 
-	"github.com/dushixiang/captcha"
+	"github.com/go-orz/captcha"
 )
 
 func main() {
